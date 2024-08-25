@@ -23,6 +23,12 @@ public abstract class SerializationTestFixtureBase
 
         // Add a breakpoint here to inspect the values of actualXml and expectedXml variables.
         string actualXml = stringBuilder.ToString();
+
+        using (StreamWriter writer = new StreamWriter(@"C:\repos\example.txt"))
+        {
+            writer.Write(actualXml);
+        }
+
         Stream? stream = ReadTestXmlStreamReader(testFileName);
         using StreamReader stringReader = new StreamReader(stream!);
         string expectedXml = stringReader.ReadToEnd();
