@@ -36,6 +36,7 @@ public class PurchaseOrder
             {
                 subTotal += item.LineTotal;
             }
+
             this.SubTotal = subTotal;
         }
     }
